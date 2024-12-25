@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginsinguppage/pages/signin.dart';
+import 'package:loginsinguppage/pages/signup.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -46,42 +48,58 @@ class _OnboardingState extends State<Onboarding> {
                 SizedBox(
                   height: 40,
                 ),
-                Container(
-                    padding: EdgeInsets.only(top: 8, bottom: 8),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white60),
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    )),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignIn(),
+                          ));
+                    },
+                    child: Container(
+                        padding: EdgeInsets.only(top: 8, bottom: 8),
+                        margin: EdgeInsets.only(left: 30, right: 30),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white60),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Center(
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ))),
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                    padding: EdgeInsets.only(top: 8, bottom: 8),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.white60),
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    )),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUp(),
+                          ));
+                    },
+                    child: Container(
+                        padding: EdgeInsets.only(top: 8, bottom: 8),
+                        margin: EdgeInsets.only(left: 30, right: 30),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white60),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Center(
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ))),
                 SizedBox(height: MediaQuery.of(context).size.height / 8),
                 Text(
                   'Login With Social Media',
