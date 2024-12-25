@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:loginsinguppage/pages/signup.dart';
+import 'package:loginsinguppage/pages/signin.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +28,7 @@ class _SignInState extends State<SignIn> {
           Padding(
               padding: EdgeInsets.only(left: 30),
               child: Text(
-                'Hello\nSigin in!',
+                'Create Your\nAccount!',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
@@ -50,17 +50,36 @@ class _SignInState extends State<SignIn> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+                  'Name',
+                  style: TextStyle(
+                      color: Color(0xffb51837),
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                Container(
+                    height: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Name",
+                          prefixIcon: Icon(Icons.person_outline)),
+                    )),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
                   'Email',
                   style: TextStyle(
                       color: Color(0xffb51837),
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Enter Email",
-                      prefixIcon: Icon(Icons.email_outlined)),
-                ),
+                Container(
+                    height: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Email",
+                          prefixIcon: Icon(Icons.email_outlined)),
+                    )),
                 SizedBox(
                   height: 30,
                 ),
@@ -71,28 +90,18 @@ class _SignInState extends State<SignIn> {
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Enter Password",
-                      prefixIcon: Icon(Icons.password_outlined)),
-                ),
+                Container(
+                    height: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Password",
+                          prefixIcon: Icon(Icons.password_outlined)),
+                    )),
                 SizedBox(
                   height: 8.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 4, 71, 126),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
                 SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
                 Container(
                   height: 40,
@@ -107,7 +116,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   child: Center(
                       child: Text(
-                    'SIGN IN',
+                    'SIGN UP',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 22,
@@ -115,7 +124,7 @@ class _SignInState extends State<SignIn> {
                   )),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 9,
+                  height: MediaQuery.of(context).size.height / 12,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -124,7 +133,7 @@ class _SignInState extends State<SignIn> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          'Don\'t have account?',
+                          'Already have an account?',
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16,
@@ -135,11 +144,11 @@ class _SignInState extends State<SignIn> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SignUp(),
+                                    builder: (context) => SignIn(),
                                   ));
                             },
                             child: Text(
-                              'SIGN Up',
+                              'SIGN IN',
                               style: TextStyle(
                                   color: const Color.fromARGB(255, 4, 71, 126),
                                   fontSize: 20,
