@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instauiclone/Screen/SingUp/signupscreen.dart';
+import 'package:instauiclone/Screen/bottomnav/bottomnavscreen.dart';
 import 'package:instauiclone/Widgets/uihelper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -43,7 +44,15 @@ class LoginScreen extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        UiHelper.CustomButton(callback: () {}, buttonName: 'Login'),
+        UiHelper.CustomButton(
+            callback: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavScreen(),
+                  ));
+            },
+            buttonName: 'Login'),
         SizedBox(
           height: 20,
         ),
