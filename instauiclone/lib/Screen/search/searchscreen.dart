@@ -4,6 +4,24 @@ import 'package:instauiclone/Widgets/uihelper.dart';
 
 class SearchScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
+  var arrContent = [
+    {
+      "img":
+          'https://th.bing.com/th/id/OIP.pDpe52FsuWHyp0qOjOArRgHaEo?rs=1&pid=ImgDetMain',
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/R.6f27a74b2c3cd42be3792d74c24e3db2?rik=JlzZ1VA4avfxvA&pid=ImgRaw&r=0',
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.qLc7CKA1SnBvANPyTe5zeAHaEK?rs=1&pid=ImgDetMain'
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +169,25 @@ class SearchScreen extends StatelessWidget {
                 ),
               )
             ],
-          )
+          ),
+          Expanded(
+              child: GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemBuilder: (context, index) {
+              return Container(
+                height: 124,
+                width: 124,
+                child: Image.network(
+                  arrContent[index]['img'].toString(),
+                  fit: BoxFit.cover,
+                ),
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(),
+              );
+            },
+            itemCount: arrContent.length,
+          ))
         ],
       ),
     );
