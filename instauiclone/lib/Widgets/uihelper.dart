@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class UiHelper {
@@ -10,24 +8,26 @@ class UiHelper {
     required TextInputType textinputtype,
   }) {
     return Container(
-        color: Color(0xff121212),
-        height: 44,
-        width: 343,
+        height: 50,
+        width: 300,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.white),
+            color: Color(0xff121212),
+            border: Border.all(color: Colors.white24),
             borderRadius: BorderRadius.circular(5)),
-        child: TextField(
-          controller: controller,
-          obscureText: tohide,
-          keyboardType: textinputtype,
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: text,
-              hintStyle: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white)),
-        ));
+        child: Padding(
+            padding: EdgeInsets.only(left: 16),
+            child: TextField(
+              controller: controller,
+              obscureText: tohide,
+              keyboardType: textinputtype,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: text,
+                  hintStyle: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white)),
+            )));
   }
 
   static CustomImage(
@@ -47,5 +47,33 @@ class UiHelper {
         color: color,
       );
     }
+  }
+
+  static CustomTextButton(
+      {required VoidCallback callback, required String text}) {
+    return TextButton(
+        onPressed: callback,
+        child: Text(
+          text,
+          style: TextStyle(color: Color(0xff3797EF), fontSize: 12),
+        ));
+  }
+
+  static CustomButton(
+      {required VoidCallback callback, required String buttonName}) {
+    return SizedBox(
+      width: 300,
+      height: 50,
+      child: ElevatedButton(
+          onPressed: callback,
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xff3797ef),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5))),
+          child: Text(
+            buttonName,
+            style: TextStyle(fontSize: 14, color: Colors.white),
+          )),
+    );
   }
 }

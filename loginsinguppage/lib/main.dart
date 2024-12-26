@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loginsinguppage/pages/onboarding.dart';
-import 'package:loginsinguppage/pages/signin.dart';
 
 void main() {
   runApp(const MyApp());

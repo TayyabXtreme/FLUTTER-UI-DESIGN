@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp> {
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold),
                 ),
-                Container(
+                SizedBox(
                     height: 30,
                     child: TextField(
                       decoration: InputDecoration(
@@ -73,7 +73,7 @@ class _SignUpState extends State<SignUp> {
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold),
                 ),
-                Container(
+                SizedBox(
                     height: 30,
                     child: TextField(
                       decoration: InputDecoration(
@@ -90,7 +90,7 @@ class _SignUpState extends State<SignUp> {
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold),
                 ),
-                Container(
+                SizedBox(
                     height: 30,
                     child: TextField(
                       decoration: InputDecoration(
