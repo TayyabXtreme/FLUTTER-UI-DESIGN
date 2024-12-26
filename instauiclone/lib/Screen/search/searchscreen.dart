@@ -20,6 +20,54 @@ class SearchScreen extends StatelessWidget {
     {
       'img':
           'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/OIP.pDpe52FsuWHyp0qOjOArRgHaEo?rs=1&pid=ImgDetMain',
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/R.6f27a74b2c3cd42be3792d74c24e3db2?rik=JlzZ1VA4avfxvA&pid=ImgRaw&r=0',
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.qLc7CKA1SnBvANPyTe5zeAHaEK?rs=1&pid=ImgDetMain'
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/OIP.pDpe52FsuWHyp0qOjOArRgHaEo?rs=1&pid=ImgDetMain',
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/R.6f27a74b2c3cd42be3792d74c24e3db2?rik=JlzZ1VA4avfxvA&pid=ImgRaw&r=0',
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.qLc7CKA1SnBvANPyTe5zeAHaEK?rs=1&pid=ImgDetMain'
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/OIP.pDpe52FsuWHyp0qOjOArRgHaEo?rs=1&pid=ImgDetMain',
+    },
+    {
+      "img":
+          'https://th.bing.com/th/id/R.6f27a74b2c3cd42be3792d74c24e3db2?rik=JlzZ1VA4avfxvA&pid=ImgRaw&r=0',
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.qLc7CKA1SnBvANPyTe5zeAHaEK?rs=1&pid=ImgDetMain'
+    },
+    {
+      'img':
+          'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
     }
   ];
   @override
