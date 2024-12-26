@@ -39,6 +39,118 @@ class SearchScreen extends StatelessWidget {
               ),
               Icon(Icons.live_tv)
             ],
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 32,
+                width: 75,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(3)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    UiHelper.CustomImage(
+                        imgUrl: 'tv.png', width: 16, height: 16),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      'IGTV',
+                      style: TextStyle(fontSize: 14, color: Color(0xfff9f9f9)),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 32,
+                width: 75,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(3)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    UiHelper.CustomImage(
+                        imgUrl: 'bag.png', width: 16, height: 16),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      'Shop',
+                      style: TextStyle(fontSize: 14, color: Color(0xfff9f9f9)),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 32,
+                width: 60,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(3)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Style',
+                      style: TextStyle(fontSize: 14, color: Color(0xfff9f9f9)),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 32,
+                width: 60,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(3)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Sports',
+                      style: TextStyle(fontSize: 14, color: Color(0xfff9f9f9)),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 32,
+                width: 50,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(3)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Auto',
+                      style: TextStyle(fontSize: 14, color: Color(0xfff9f9f9)),
+                    )
+                  ],
+                ),
+              )
+            ],
           )
         ],
       ),
