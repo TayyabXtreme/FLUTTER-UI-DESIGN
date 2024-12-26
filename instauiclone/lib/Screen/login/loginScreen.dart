@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instauiclone/Screen/SingUp/signupscreen.dart';
 import 'package:instauiclone/Widgets/uihelper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class LoginScreen extends StatelessWidget {
           height: 10,
         ),
         UiHelper.CustomTextField(
-            controller: emailController,
+            controller: passwordController,
             text: "Password",
             tohide: true,
             textinputtype: TextInputType.text),
@@ -70,7 +71,15 @@ class LoginScreen extends StatelessWidget {
               'Don\'t have an account',
               style: TextStyle(fontSize: 14, color: Colors.white),
             ),
-            UiHelper.CustomTextButton(callback: () {}, text: 'SignUp')
+            UiHelper.CustomTextButton(
+                callback: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignUpScreen(),
+                      ));
+                },
+                text: 'SignUp')
           ],
         )
       ],
