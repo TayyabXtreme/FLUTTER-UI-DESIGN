@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instauiclone/Screen/messages/messagesscreen.dart';
 import 'package:instauiclone/Widgets/uihelper.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -54,6 +55,8 @@ class HomeScreen extends StatelessWidget {
       "name": "carry"
     }
   ];
+
+  HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +70,15 @@ class HomeScreen extends StatelessWidget {
           centerTitle: true,
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.tv)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.share))
+            IconButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MessagesScreen()));
+                },
+                icon: UiHelper.CustomImage(
+                    imgUrl: 'share.png', width: 24, height: 24))
           ],
         ),
         body: SingleChildScrollView(

@@ -5,7 +5,6 @@ import 'package:instauiclone/Screen/home/HomeScreen.dart';
 import 'package:instauiclone/Screen/post/postscreen.dart';
 import 'package:instauiclone/Screen/profile/profilescreen.dart';
 import 'package:instauiclone/Screen/search/searchscreen.dart';
-import 'package:instauiclone/Widgets/uihelper.dart';
 
 class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({super.key});
