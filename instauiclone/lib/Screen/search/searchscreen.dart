@@ -70,6 +70,8 @@ class SearchScreen extends StatelessWidget {
           'https://th.bing.com/th/id/OIP.KSc66FzLtEy8ydIcwL49OwHaE8?rs=1&pid=ImgDetMain'
     }
   ];
+
+  SearchScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -226,12 +228,12 @@ class SearchScreen extends StatelessWidget {
               return Container(
                 height: 124,
                 width: 124,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(),
                 child: Image.network(
                   arrContent[index]['img'].toString(),
                   fit: BoxFit.cover,
                 ),
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(),
               );
             },
             itemCount: arrContent.length,

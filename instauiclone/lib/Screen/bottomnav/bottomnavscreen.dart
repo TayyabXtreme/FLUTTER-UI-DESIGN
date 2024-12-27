@@ -8,6 +8,8 @@ import 'package:instauiclone/Screen/search/searchscreen.dart';
 import 'package:instauiclone/Widgets/uihelper.dart';
 
 class BottomNavScreen extends StatefulWidget {
+  const BottomNavScreen({super.key});
+
   @override
   State<BottomNavScreen> createState() => _BottomNavScreenState();
 }
@@ -47,8 +49,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         ],
       ),
       body: IndexedStack(
-        children: pages,
         index: currentIndex,
+        children: pages,
       ),
     );
   }
