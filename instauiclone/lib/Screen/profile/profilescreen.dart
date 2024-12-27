@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instauiclone/Screen/post/postscreen.dart';
 import 'package:instauiclone/Screen/profile/postscreen.dart';
 import 'package:instauiclone/Screen/profile/tagScreens.dart';
 
