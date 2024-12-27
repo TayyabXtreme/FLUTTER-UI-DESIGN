@@ -28,4 +28,8 @@ class Uihelper {
           fontWeight: fontweight ?? FontWeight.normal),
     );
   }
+
+  static CustomImage({required imgurl}) {
+    return Image.asset('assets/images/$imgurl');
+  }
 }
