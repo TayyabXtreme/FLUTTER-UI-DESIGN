@@ -102,7 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return Container(
+          return SizedBox(
             height: 200,
             width: 200,
             child: Column(
