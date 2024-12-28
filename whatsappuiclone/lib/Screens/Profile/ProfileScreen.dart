@@ -1,12 +1,21 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsappuiclone/Widgets/UiHelper.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  TextEditingController nameController = TextEditingController();
+  File? pickedimage;
+  @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -35,11 +44,20 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          CircleAvatar(
-            child: Uihelper.CustomImage(imgurl: 'photo-camera.png'),
-            radius: 80,
-            backgroundColor: Color(0xffD9D9D9),
-          ),
+          GestureDetector(
+              onTap: () {
+                _openBottom(context);
+              },
+              child: pickedimage == null
+                  ? CircleAvatar(
+                      child: Uihelper.CustomImage(imgurl: 'photo-camera.png'),
+                      radius: 80,
+                      backgroundColor: Color(0xffD9D9D9),
+                    )
+                  : CircleAvatar(
+                      radius: 80,
+                      backgroundImage: FileImage(pickedimage!),
+                    )),
           SizedBox(
             height: 30,
           ),
@@ -69,9 +87,63 @@ class ProfileScreen extends StatelessWidget {
               ))
         ],
       )),
-      floatingActionButton:
-          Uihelper.CustomButton(callback: () {}, buttonname: 'Next'),
+      floatingActionButton: Uihelper.CustomButton(
+          callback: () => _openBottom(context), buttonname: 'Next'),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  void _openBottom(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 200,
+            width: 200,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          _pickImage(ImageSource.camera);
+                        },
+                        icon: Icon(
+                          Icons.camera_alt,
+                          size: 80,
+                          color: Colors.grey,
+                        )),
+                    IconButton(
+                        onPressed: () {
+                          _pickImage(ImageSource.gallery);
+                        },
+                        icon: Icon(
+                          Icons.image,
+                          size: 80,
+                          color: Colors.grey,
+                        )),
+                  ],
+                )
+              ],
+            ),
+          );
+        });
+  }
+
+  _pickImage(ImageSource imagesource) async {
+    try {
+      final photo = await ImagePicker().pickImage(source: imagesource);
+      if (photo == null) return;
+      final tempImg = File(photo.path);
+      setState(() {
+        pickedimage = tempImg;
+      });
+    } catch (ex) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(ex.toString()), backgroundColor: Colors.green),
+      );
+    }
   }
 }

@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          hintText: '+91',
+                          hintText: '+92',
                           border: UnderlineInputBorder(
                               borderSide: BorderSide(color: Color(0xff00a884))),
                           focusedBorder: UnderlineInputBorder(
