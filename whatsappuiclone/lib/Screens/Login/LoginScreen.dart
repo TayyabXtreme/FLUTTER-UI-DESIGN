@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
       return ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Enter your number')));
     } else {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => OTPScreen(phoneNumber: phoneNumber)));

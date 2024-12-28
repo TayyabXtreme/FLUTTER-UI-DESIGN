@@ -54,7 +54,7 @@ class OnBoardingScreen extends StatelessWidget {
       ),
       floatingActionButton: Uihelper.CustomButton(
           callback: () {
-            Navigator.push(
+            Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => LoginScreen(),
