@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappuiclone/Screens/Chats/Contact/ContactScreen.dart';
 import 'package:whatsappuiclone/Widgets/UiHelper.dart';
 
 class ChatsScreen extends StatelessWidget {
@@ -66,56 +67,62 @@ class ChatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-              child: ListView.builder(
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: CircleAvatar(
-                  radius: 40,
-                  backgroundImage:
-                      NetworkImage(arrContent[index]['images'].toString()),
-                ),
-                title: Uihelper.CustomText(
-                    text: arrContent[index]['name'].toString(),
-                    height: 14,
-                    fontweight: FontWeight.bold),
-                subtitle: Uihelper.CustomText(
-                    text: arrContent[index]['lastmsg'].toString(), height: 12),
-                trailing: Column(
-                  children: [
-                    Uihelper.CustomText(
-                        text: arrContent[index]['time'].toString(),
-                        height: 12,
-                        color: Color(0xff026500)),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    CircleAvatar(
-                      radius: 9,
-                      backgroundColor: Color(0xff036a01),
-                      child: Uihelper.CustomText(
-                          text: arrContent[index]['msg'].toString(),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+                child: ListView.builder(
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    radius: 40,
+                    backgroundImage:
+                        NetworkImage(arrContent[index]['images'].toString()),
+                  ),
+                  title: Uihelper.CustomText(
+                      text: arrContent[index]['name'].toString(),
+                      height: 14,
+                      fontweight: FontWeight.bold),
+                  subtitle: Uihelper.CustomText(
+                      text: arrContent[index]['lastmsg'].toString(),
+                      height: 12),
+                  trailing: Column(
+                    children: [
+                      Uihelper.CustomText(
+                          text: arrContent[index]['time'].toString(),
                           height: 12,
-                          color: Colors.white),
-                    ),
-                  ],
-                ),
-              );
-            },
-            itemCount: arrContent.length,
-          ))
-        ],
-      ),
-      floatingActionButton: CircleAvatar(
-        radius: 30,
-        backgroundColor: Color(0xff008665),
-        child: Image.asset('assets/images/mode_comment.png'),
-      ),
-    );
+                          color: Color(0xff026500)),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      CircleAvatar(
+                        radius: 9,
+                        backgroundColor: Color(0xff036a01),
+                        child: Uihelper.CustomText(
+                            text: arrContent[index]['msg'].toString(),
+                            height: 12,
+                            color: Colors.white),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              itemCount: arrContent.length,
+            ))
+          ],
+        ),
+        floatingActionButton: GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ContactScreen()));
+          },
+          child: CircleAvatar(
+            radius: 30,
+            backgroundColor: Color(0xff008665),
+            child: Image.asset('assets/images/mode_comment.png'),
+          ),
+        ));
   }
 }

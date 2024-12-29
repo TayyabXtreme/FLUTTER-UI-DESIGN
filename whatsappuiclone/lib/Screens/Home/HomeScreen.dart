@@ -41,7 +41,8 @@ class HomeScreen extends StatelessWidget {
                   child: IconButton(
                       onPressed: () {},
                       icon: Uihelper.CustomImage(imgurl: 'Search.png')),
-                )
+                ),
+                IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
               ],
             ),
             body: TabBarView(children: [
